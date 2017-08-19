@@ -20,6 +20,7 @@ namespace ChinookConsoleApp
                 Console.WriteLine("1. List Employees");
                 Console.WriteLine("2. Add an Employee");
                 Console.WriteLine("3. Delete an Employee");
+                Console.WriteLine("4. Update an Employee");
                 Console.WriteLine("9. Exit");
                 Console.WriteLine("");
                 Console.Write(">");
@@ -28,6 +29,7 @@ namespace ChinookConsoleApp
                 if (selection == "1") new ListEmployees().List("Press enter to return to the menu");
                 if (selection == "2") new AddEmployee().Add();
                 if (selection == "3") new DeleteEmployee().Delete();
+                if (selection == "4") new UpdateEmployee().Update();
                 if (selection == "9") break;
             }
         }

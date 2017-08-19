@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using Dapper;
 
 namespace ChinookConsoleApp
 {
@@ -14,16 +15,12 @@ namespace ChinookConsoleApp
 
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Chinook"].ConnectionString))
             {
-                connection.Open();
-                var cmd = connection.CreateCommand();
-                cmd.CommandText = "Delete From Employee where EmployeeId = @EmployeeId";
-
-                var employeeIdParameter = cmd.Parameters.Add("@EmployeeId", SqlDbType.Int);
-                employeeIdParameter.Value = firedEmployee;
+                //connection.Open();
+                var sqlDelete = $@"Delete From Employee where EmployeeId = @EmployeeId";
 
                 try
                 {
-                    var affectedRows = cmd.ExecuteNonQuery();
+                    var affectedRows = connection.Execute(sqlDelete, new { EmployeeId = firedEmployee });
 
                     if (affectedRows == 1)
                     {

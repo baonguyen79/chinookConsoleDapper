@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChinookConsoleApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             while (true)
             {
                 Console.Clear();
@@ -21,6 +20,7 @@ namespace ChinookConsoleApp
                 Console.WriteLine("2. Add an Employee");
                 Console.WriteLine("3. Delete an Employee");
                 Console.WriteLine("4. Update an Employee");
+                Console.WriteLine("5. Employee sales by year");
                 Console.WriteLine("9. Exit");
                 Console.WriteLine("");
                 Console.Write(">");
@@ -30,6 +30,8 @@ namespace ChinookConsoleApp
                 if (selection == "2") new AddEmployee().Add();
                 if (selection == "3") new DeleteEmployee().Delete();
                 if (selection == "4") new UpdateEmployee().Update();
+                if (selection == "5") new EmployeeSale().ListYears();
+
                 if (selection == "9") break;
             }
         }

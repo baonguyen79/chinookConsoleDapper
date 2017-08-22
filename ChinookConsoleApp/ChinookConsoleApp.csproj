@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AddEmployee.cs" />
     <Compile Include="DeleteEmployee.cs" />
+    <Compile Include="EmployeeSale.cs" />
     <Compile Include="ListEmployees.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
